@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex</title>
+  <!-- Cargar Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="container mt-5">
+    <div id="app" class="box">
+      <h1 class="title has-text-centered">Pokédex</h1>
+
+      <!-- Input de búsqueda -->
+      <div class="field">
+        <label class="label">Buscar Pokémon</label>
+        <div class="control">
+          <input id="id-pokemon" class="input" type="text" value="pikachu" placeholder="Buscar Pokémon por nombre o ID">
+        </div>
+      </div>
+      <div class="field has-text-centered">
+        <button id="search-btn" class="button is-primary">Buscar Pokémon</button>
+      </div>
+
+      <!-- Contenedor para la información del Pokémon -->
+      <div id="pdf-container" class="box" style="display: none;">
+        <h2 class="subtitle has-text-centered">Información del Pokémon</h2>
+        <div id="image-container" class="has-text-centered"></div>
+        <table class="table is-fullwidth is-striped mt-4">
+          <tr>
+            <th>Número Pokédex</th>
+            <td id="numero-pokedex"></td>
+          </tr>
+          <tr>
+            <th>Nombre</th>
+            <td id="nombre-pokemon"></td>
+          </tr>
+          <tr>
+            <th>Generación</th>
+            <td id="generacion"></td>
+          </tr>
+          <tr>
+            <th>Tipo</th>
+            <td id="tipo-pokemon"></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Botón para generar PDF -->
+      <div class="field has-text-centered">
+        <button id="generate-pdf-btn" class="button is-link">Generar PDF</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/js/app.js"></script>
+</body>
+</html>
+
